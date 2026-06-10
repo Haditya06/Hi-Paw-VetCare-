@@ -29,5 +29,10 @@ public class TubesDPBO {
         
         System.out.println("Cokk lapoo iki");
          System.out.println("Kontoll bisa gak");
+         
+         
+         System.out.println("Hazzel Kontol");
+         System.out.println("Hazzel Anjing");
+         
     }
 }
