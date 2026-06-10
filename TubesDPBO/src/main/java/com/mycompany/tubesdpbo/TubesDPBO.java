@@ -28,6 +28,6 @@ public class TubesDPBO {
         System.out.println("Kontoll bisa gak");
         
         System.out.println("Cokk lapoo iki");
-        
+         System.out.println("Kontoll bisa gak");
     }
 }
