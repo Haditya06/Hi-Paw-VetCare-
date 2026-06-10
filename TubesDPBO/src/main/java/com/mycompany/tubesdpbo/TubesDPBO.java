@@ -33,6 +33,7 @@ public class TubesDPBO {
          
          System.out.println("Hazzel Kontol");
          System.out.println("Hazzel Anjing");
+         System.out.println("tess");
          
     }
 }
