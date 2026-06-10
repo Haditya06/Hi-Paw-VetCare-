@@ -8,6 +8,7 @@ package com.mycompany.tubesdpbo;
  *
  * @author Ray Wishnu
  */
+import java.util.*;
 public class TubesDPBO {
 
     public static void main(String[] args) {
@@ -23,5 +24,8 @@ public class TubesDPBO {
         System.out.print("Hazzel Bujang");
         System.out.print("Hazzel Bujang");
         System.out.print("Hazzel Bujang");
+        
+        System.out.println("Kontoll bisa gak");
+        
     }
 }
