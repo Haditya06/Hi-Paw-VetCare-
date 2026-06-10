@@ -12,5 +12,16 @@ public class TubesDPBO {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
+        System.out.print("Hazzel Bujang");
     }
 }
