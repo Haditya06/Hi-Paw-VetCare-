@@ -3,11 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.tubesdpbo;
-
 /**
  *
  * @author Dit
  */
 public class User {
+    protected String username;
+    protected String password;
+    protected String nama;
+    public User(String username, String password, String nama){
+        this.username = username;
+        this.password = password;
+        this.nama = nama;
+    }
     
 }
