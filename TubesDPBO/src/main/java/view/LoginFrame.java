@@ -8,6 +8,11 @@ package view;
  *
  * @author Dit
  */
+import database.DatabaseConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 public class LoginFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginFrame.class.getName());
@@ -60,27 +65,27 @@ public class LoginFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(63, 63, 63)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tmblLogin)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tmblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(tfUsernameLogin)
-                                .addComponent(tfPasswordLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)))))
+                                .addComponent(tfPasswordLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(jLabel3)))
                 .addGap(0, 255, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel3)
-                .addGap(66, 66, 66)
+                .addGap(86, 86, 86)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tfUsernameLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,6 +124,40 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void tmblLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblLoginActionPerformed
         // TODO add your handling code here:
+    String username = tfUsernameLogin.getText().trim();
+    String password = tfPasswordLogin.getText().trim();
+
+    try {
+
+        Connection conn = DatabaseConnection.getConnection();
+
+        String sql ="SELECT * FROM users WHERE username = ? AND password = ?";
+
+        PreparedStatement ps = conn.prepareStatement(sql);
+
+        ps.setString(1, username);
+        ps.setString(2, password);
+
+        ResultSet rs = ps.executeQuery();
+        
+        if (rs.next()) {
+            String role = rs.getString("role");
+            JOptionPane.showMessageDialog(this,"Login Berhasil");
+            if (role.equals("STAFF")) {
+                new CustomerDashboardFrame().setVisible(true);
+            } else if (role.equals("DOKTER")) {
+                new DokterDashboardFrame().setVisible(true);
+            } else {
+                new CustomerDashboardFrame().setVisible(true);
+            }
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog( this, "Username atau Password Salah");
+        }
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this,e.getMessage());
+        }
     }//GEN-LAST:event_tmblLoginActionPerformed
 
     /**
