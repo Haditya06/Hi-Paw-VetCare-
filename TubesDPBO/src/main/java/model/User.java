@@ -14,38 +14,41 @@ public class User {
     protected String password;
     protected String namaLengkap;
 
-    public User(String username,
-                String password,
-                String namaLengkap) {
+    public User(){
+        
+    }
 
+    public User(String username,String password,String namaLengkap) {
         this.username = username;
         this.password = password;
         this.namaLengkap = namaLengkap;
     }
 
     public boolean login() {
-
-        System.out.println(
-                namaLengkap + " berhasil login");
-
+        System.out.println(namaLengkap + " berhasil login");
         return true;
     }
 
     public void logout() {
-
-        System.out.println(
-                namaLengkap + " logout");
+        System.out.println(namaLengkap + " logout");
     }
-
     public String getRole() {
         return "User";
     }
-
     public String getUsername() {
         return username;
     }
 
     public String getNamaLengkap() {
         return namaLengkap;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setUsername(String username){
+        this.username = username;
+    }
+    public void setNamaLengkap(String namaLengkap){
+        this.namaLengkap = namaLengkap;
     }
 }

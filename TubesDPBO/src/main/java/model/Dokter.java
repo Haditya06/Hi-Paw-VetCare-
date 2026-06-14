@@ -8,6 +8,21 @@ package model;
  *
  * @author Dit
  */
-public class Dokter {
-    
+public class Dokter extends User{
+    private String idDokter;
+    private String spesialisasi;
+
+    public Dokter() {
+    }
+    public Dokter(String username,String password,String namaLengkap,String idDokter,String spesialisasi) {
+        super(username, password, namaLengkap);
+        this.idDokter = idDokter;
+        this.spesialisasi = spesialisasi;
+    }
+    public String getIdDokter() {
+        return idDokter;
+    }
+    public String getSpesialisasi() {
+        return spesialisasi;
+    }
 }

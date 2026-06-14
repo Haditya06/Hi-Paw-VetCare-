@@ -6,8 +6,8 @@ package model;
 
 /**
  *
- * @author Dit
+ * @author syahrilfarhan
  */
-public class Pembayaran {
+public class Notifiable {
     
 }

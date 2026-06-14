@@ -8,6 +8,21 @@ package model;
  *
  * @author Dit
  */
-public class StaffAdministrasi {
-    
+public class StaffAdministrasi extends User {
+    private String idStaff;
+    private String shiftKerja;
+
+    public StaffAdministrasi() {
+    }
+    public StaffAdministrasi(String username,String password,String namaLengkap,String idStaff,String shiftKerja) {
+        super(username, password, namaLengkap);
+        this.idStaff = idStaff;
+        this.shiftKerja = shiftKerja;
+    }
+    public String getIdStaff() {
+        return idStaff;
+    }
+    public String getShiftKerja() {
+        return shiftKerja;
+    }
 }
