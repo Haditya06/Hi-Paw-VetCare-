@@ -8,12 +8,13 @@ package com.mycompany.tubesdpbo;
  *
  * @author Ray Wishnu
  */
-import java.util.*;
+import database.DatabaseConnection;
+
 public class TubesDPBO {
 
     public static void main(String[] args) {
         
-        
+        DatabaseConnection.getConnection();
          
     }
 }
