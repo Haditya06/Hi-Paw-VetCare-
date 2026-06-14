@@ -15,8 +15,6 @@ public class Hewan {
     private int umur;
     private Customer pemilik;
 
-    public Hewan() {
-    }
     public Hewan(String idHewan,String namaHewan,String jenis,int umur,Customer pemilik) {
         this.idHewan = idHewan;
         this.namaHewan = namaHewan;
