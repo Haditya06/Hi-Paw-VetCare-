@@ -8,14 +8,14 @@ package view;
  *
  * @author Dit
  */
-public class FormReservasi extends javax.swing.JFrame {
+public class DokterDashboardFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormReservasi.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DokterDashboardFrame.class.getName());
 
     /**
-     * Creates new form FormReservasi
+     * Creates new form DokterDashboardFrame
      */
-    public FormReservasi() {
+    public DokterDashboardFrame() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class FormReservasi extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FormReservasi().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new DokterDashboardFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

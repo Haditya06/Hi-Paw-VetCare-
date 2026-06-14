@@ -8,14 +8,14 @@ package view;
  *
  * @author Dit
  */
-public class FormRekamMedis extends javax.swing.JFrame {
+public class FormReservasiFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormRekamMedis.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormReservasiFrame.class.getName());
 
     /**
-     * Creates new form FormRekamMedis
+     * Creates new form FormReservasiFrame
      */
-    public FormRekamMedis() {
+    public FormReservasiFrame() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class FormRekamMedis extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FormRekamMedis().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FormReservasiFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

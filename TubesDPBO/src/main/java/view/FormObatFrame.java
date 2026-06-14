@@ -8,14 +8,14 @@ package view;
  *
  * @author Dit
  */
-public class FormPembayaran extends javax.swing.JFrame {
+public class FormObatFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormPembayaran.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormObatFrame.class.getName());
 
     /**
-     * Creates new form FormPembayaran
+     * Creates new form FormObatFrame
      */
-    public FormPembayaran() {
+    public FormObatFrame() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class FormPembayaran extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FormPembayaran().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FormObatFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

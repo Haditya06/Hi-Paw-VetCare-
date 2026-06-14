@@ -8,14 +8,14 @@ package view;
  *
  * @author Dit
  */
-public class DashboardAdmin extends javax.swing.JFrame {
+public class FormPemeriksaanFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DashboardAdmin.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormPemeriksaanFrame.class.getName());
 
     /**
-     * Creates new form DashboardAdmin
+     * Creates new form FormPemeriksaanFrame
      */
-    public DashboardAdmin() {
+    public FormPemeriksaanFrame() {
         initComponents();
     }
 
@@ -34,11 +34,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 423, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -66,7 +66,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new DashboardAdmin().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FormPemeriksaanFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

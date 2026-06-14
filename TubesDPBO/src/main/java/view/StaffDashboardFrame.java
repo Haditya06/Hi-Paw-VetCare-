@@ -8,14 +8,14 @@ package view;
  *
  * @author Dit
  */
-public class FormHewan extends javax.swing.JFrame {
+public class StaffDashboardFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormHewan.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StaffDashboardFrame.class.getName());
 
     /**
-     * Creates new form FormHewan
+     * Creates new form StaffDashboardFrame
      */
-    public FormHewan() {
+    public StaffDashboardFrame() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class FormHewan extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FormHewan().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new StaffDashboardFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
