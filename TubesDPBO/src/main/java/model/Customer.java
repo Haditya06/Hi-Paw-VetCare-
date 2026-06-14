@@ -16,7 +16,6 @@ public class Customer extends User{
         super(username, password, namaLengkap);
         this.noHp = noHp;
         this.alamat= alamat;
-        
     }
 
     public String getNoHp() {

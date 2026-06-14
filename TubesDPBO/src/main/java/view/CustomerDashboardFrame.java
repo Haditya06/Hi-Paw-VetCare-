@@ -198,6 +198,9 @@ public class CustomerDashboardFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
+        if(btnCreate.isSelected()){
+            
+        }
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnMedicalHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicalHistoryActionPerformed
