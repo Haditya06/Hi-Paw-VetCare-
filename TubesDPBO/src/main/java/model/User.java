@@ -10,4 +10,42 @@ package model;
  */
 public class User {
     
+    protected String username;
+    protected String password;
+    protected String namaLengkap;
+
+    public User(String username,
+                String password,
+                String namaLengkap) {
+
+        this.username = username;
+        this.password = password;
+        this.namaLengkap = namaLengkap;
+    }
+
+    public boolean login() {
+
+        System.out.println(
+                namaLengkap + " berhasil login");
+
+        return true;
+    }
+
+    public void logout() {
+
+        System.out.println(
+                namaLengkap + " logout");
+    }
+
+    public String getRole() {
+        return "User";
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getNamaLengkap() {
+        return namaLengkap;
+    }
 }
