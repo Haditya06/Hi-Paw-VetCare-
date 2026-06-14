@@ -8,7 +8,31 @@ package model;
  *
  * @author Dit
  */
-public class Customer {
-    
+public class Customer extends User{
+    private String noHp;
+    private String alamat;
+
+    public Customer(String username, String password, String namaLengkap, String noHp, String alamat) {
+        super(username, password, namaLengkap);
+        this.noHp = noHp;
+        this.alamat= alamat;
+        
+    }
+
+    public String getNoHp() {
+        return noHp;
+    }
+
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
     
 }
