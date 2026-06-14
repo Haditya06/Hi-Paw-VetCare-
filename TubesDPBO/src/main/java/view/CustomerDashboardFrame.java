@@ -11,7 +11,7 @@ package view;
 public class CustomerDashboardFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CustomerDashboardFrame.class.getName());
-    
+    //gyyhyhyhuhu
     /**
      * Creates new form CustomerDashboardFrame
      */
