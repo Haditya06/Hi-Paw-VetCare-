@@ -231,25 +231,15 @@ public class CustomerDashboardFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnMedicalHistory;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel lblNama;
-    private javax.swing.JLabel lblNama1;
     private javax.swing.JLabel lblNama2;
-    private javax.swing.JLabel lblPets;
-    private javax.swing.JLabel lblPets1;
     private javax.swing.JLabel lblPets2;
     private javax.swing.JTable tblAll;
     private javax.swing.JTable tblPets;
