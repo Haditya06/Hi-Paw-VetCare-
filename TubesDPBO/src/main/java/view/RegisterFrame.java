@@ -236,6 +236,9 @@ public class RegisterFrame extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        resetForm();
+        this.dispose();
+        
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
@@ -279,4 +282,16 @@ public class RegisterFrame extends javax.swing.JFrame {
     private javax.swing.JTextField tfPhone;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
+
+private void resetForm() {
+    tfName.setText("");
+    tfUsername.setText("");
+    tfPassword.setText("");
+    tfPhone.setText("");
+    tfAddress.setText("");
+
+    tfPetname.setText("");
+    tfPettype.setText("");
+    tfPetage.setText("");
+}
 }

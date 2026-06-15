@@ -23,6 +23,13 @@ public class Hewan {
         this.username = username;
     }
     
+    public Hewan(String namaHewan,String jenis,int umur, String username) {
+        this.namaHewan = namaHewan;
+        this.jenis = jenis;
+        this.umur = umur;
+        this.username = username;
+    }
+    
     
     public int getIdHewan() {
         return idHewan;

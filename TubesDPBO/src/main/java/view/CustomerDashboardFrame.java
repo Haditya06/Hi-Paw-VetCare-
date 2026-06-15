@@ -99,7 +99,7 @@ public class CustomerDashboardFrame extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
+                "Pet Name", "Type", "Age", "Reservations", "Latest Date", "Reservation Status"
             }
         ));
         jScrollPane1.setViewportView(tblPets);
@@ -107,13 +107,13 @@ public class CustomerDashboardFrame extends javax.swing.JFrame {
         tblAll.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         tblAll.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Pet", "Service", "Date", "Time", "Status"
             }
         ));
         jScrollPane3.setViewportView(tblAll);
