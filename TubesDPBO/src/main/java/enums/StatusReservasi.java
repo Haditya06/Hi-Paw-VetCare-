@@ -8,6 +8,12 @@ package enums;
  *
  * @author syahrilfarhan
  */
-public class StatusReservasi {
+public enum StatusReservasi {
+    
+    MENUNGGU_KONFIRMASI,
+    CHECK_IN,
+    DIPERIKSA,
+    MENUNGGU_BAYAR,
+    LUNAS
     
 }

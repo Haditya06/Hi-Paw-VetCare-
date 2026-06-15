@@ -32,8 +32,22 @@ public class Reservasi {
         status = statusBaru;
         System.out.println("Status berubah menjadi "+ statusBaru);
     }
-
+    public String getIdReservasi(){
+        return idReservasi;
+    }
+    public LocalDateTime getTanggalWaktu(){
+        return tanggalWaktu;
+    }
     public String getStatus() {
         return status;
+    }
+    public Hewan getHewan(){
+        return hewan;
+    }
+    public Customer getPelanggan(){
+        return customer;
+    }
+    public Customer getCustomer(){
+        return customer;
     }
 }

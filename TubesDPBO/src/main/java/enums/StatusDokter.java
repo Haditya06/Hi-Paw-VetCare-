@@ -8,6 +8,8 @@ package enums;
  *
  * @author syahrilfarhan
  */
-public class StatusDokter {
-    
+public enum StatusDokter {
+    TERSEDIA,
+    SIBUK,
+    OFF
 }

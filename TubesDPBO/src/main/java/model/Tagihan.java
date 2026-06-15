@@ -4,7 +4,7 @@
  */
 package model;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.*;
 /**
  *
  * @author Dit
@@ -26,7 +26,7 @@ public class Tagihan {
         this.statusBayar = false;
     }
     
-    public Tagihan(String idTagihan,Reservasi reservasi, ArrayList<Layanan> Layanan){
+    public Tagihan(String idTagihan,Reservasi reservasi, ArrayList<Layanan> daftarLayanan){
         this.idTagihan = idTagihan;
         this.reservasi = reservasi;
         this.daftarDetail = new ArrayList<>();
@@ -34,14 +34,14 @@ public class Tagihan {
         this.totalBiaya = 0;
         this.statusBayar = false;
         
-        for(Layanan : this.daftarLayanan){
+        for(Layanan layanan : this.daftarLayanan){
             this.totalBiaya += layanan.getHarga();
         }
     }
     
     public void tambahDetail(DetailTransaksi detail){ //class detailTransaksi
         daftarDetail.add(detail);
-        totalBiaya += detail.hitungSubtotal; 
+        totalBiaya += detail.hitungSubtotal(); 
     }
     
     public void tambahLayanan(Layanan layanan){ //class layanan

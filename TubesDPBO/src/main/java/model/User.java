@@ -8,18 +8,23 @@ package model;
  *
  * @author Dit
  */
-public class User {
+public abstract class User {
     
     protected String username;
     protected String password;
     protected String namaLengkap;
+    public User(){
+        
+    }
 
     public User(String username,String password,String namaLengkap) {
         this.username = username;
         this.password = password;
         this.namaLengkap = namaLengkap;
     }
-
+    
+    public abstract String getRole();
+    
     public boolean login() {
         System.out.println(namaLengkap + " berhasil login");
         return true;
@@ -28,9 +33,7 @@ public class User {
     public void logout() {
         System.out.println(namaLengkap + " logout");
     }
-    public String getRole() {
-        return "User";
-    }
+
     public String getUsername() {
         return username;
     }
@@ -46,5 +49,8 @@ public class User {
     }
     public void setNamaLengkap(String namaLengkap){
         this.namaLengkap = namaLengkap;
+    }
+    public void setPassword(String password){
+        this.password = password;
     }
 }

@@ -8,6 +8,6 @@ package model;
  *
  * @author syahrilfarhan
  */
-public class Notifiable {
-    
+public interface Notifiable {
+    void kirimNotifikasi(String pesan);
 }

@@ -23,4 +23,8 @@ public class Dokter extends User{
     public String getSpesialisasi() {
         return spesialisasi;
     }
+    @Override
+    public String getRole(){
+        return "Dokter";
+    }
 }
