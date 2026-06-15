@@ -124,7 +124,7 @@ public class FormReservasiFrame extends javax.swing.JFrame {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         
-         String pet = dropPets.getSelectedItem().toString();
+    String pet = dropPets.getSelectedItem().toString();
     String service = dropService.getSelectedItem().toString();
     String date = tfDate.getText();
 
@@ -133,13 +133,7 @@ public class FormReservasiFrame extends javax.swing.JFrame {
         return;
     }
 
-    Reservasi r = new Reservasi(
-        0,
-        pet,
-        service,
-        date,
-        "PENDING"
-    );
+    Reservasi r = new Reservasi(0,pet,service,date,"PENDING");
 
     ReservasiDAO dao = new ReservasiDAO();
     dao.insertReservation(r);
