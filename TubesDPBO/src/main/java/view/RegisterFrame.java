@@ -4,6 +4,9 @@
  */
 package view;
 import model.Customer;
+import model.Hewan;
+import database.CustomerDAO;
+import database.HewanDAO;
 
 /**
  *
@@ -195,14 +198,40 @@ public class RegisterFrame extends javax.swing.JFrame {
     String petName = tfPetname.getText(); 
     String petType = tfPettype.getText();
     String petAge = tfPetage.getText();
+    int umur;
+    
+    try {
+        umur = Integer.parseInt(petAge);
+    } catch (Exception e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Umur harus angka!");
+        return;
+    }
     
     Customer c = new Customer(
+            noHp,
+            alamat,
             username,
             password,
-            nama,
-            noHp,
-            alamat
+            nama
     );
+    
+     CustomerDAO customerDAO = new CustomerDAO();
+     customerDAO.insertCustomer(c);
+     
+     Hewan h = new Hewan(
+            0,
+            petName,
+            petType,
+            umur,
+            username
+    );
+     
+    HewanDAO hewanDAO = new HewanDAO();
+    hewanDAO.insertHewan(h);
+    
+    javax.swing.JOptionPane.showMessageDialog(this, "Register berhasil!");
+
+    this.dispose();
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

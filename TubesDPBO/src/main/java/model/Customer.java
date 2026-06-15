@@ -11,11 +11,24 @@ package model;
 public class Customer extends User{
     private String noHp;
     private String alamat;
+    private int idCustomer;
+    
 
-    public Customer(String username, String password, String namaLengkap,  String noHp, String alamat) {
+    public Customer(String noHp, String alamat, int idCustomer, String username, String password, String namaLengkap) {
         super(username, password, namaLengkap);
         this.noHp = noHp;
         this.alamat= alamat;
+        this.idCustomer = idCustomer;
+    }
+    
+    public Customer(String noHp, String alamat,  String username, String password, String namaLengkap) {
+        super(username, password, namaLengkap);
+        this.noHp = noHp;
+        this.alamat= alamat;
+    }
+    
+      public int getIdCustomer() {
+        return idCustomer;
     }
 
     public String getNoHp() {
