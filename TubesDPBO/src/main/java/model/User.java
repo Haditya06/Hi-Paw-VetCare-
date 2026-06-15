@@ -14,10 +14,6 @@ public class User {
     protected String password;
     protected String namaLengkap;
 
-    public User(){
-        
-    }
-
     public User(String username,String password,String namaLengkap) {
         this.username = username;
         this.password = password;

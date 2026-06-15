@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import model.Customer;
 
 /**
  *
@@ -11,6 +12,7 @@ package view;
 public class RegisterFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegisterFrame.class.getName());
+    
 
     /**
      * Creates new form RegisterFrame
@@ -184,6 +186,23 @@ public class RegisterFrame extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
+        
+    String nama = tfName.getText(); 
+    String username = tfUsername.getText();
+    String password = tfPassword.getText();
+    String noHp = tfPhone.getText();
+    String alamat = tfAddress.getText();
+    String petName = tfPetname.getText(); 
+    String petType = tfPettype.getText();
+    String petAge = tfPetage.getText();
+    
+    Customer c = new Customer(
+            username,
+            password,
+            nama,
+            noHp,
+            alamat
+    );
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

@@ -12,7 +12,7 @@ public class Customer extends User{
     private String noHp;
     private String alamat;
 
-    public Customer(String username, String password, String namaLengkap, String noHp, String alamat) {
+    public Customer(String username, String password, String namaLengkap,  String noHp, String alamat) {
         super(username, password, namaLengkap);
         this.noHp = noHp;
         this.alamat= alamat;
@@ -32,6 +32,11 @@ public class Customer extends User{
 
     public void setAlamat(String alamat) {
         this.alamat = alamat;
+    }
+    
+    @Override
+    public String getRole() {
+        return "Customer";
     }
     
 }

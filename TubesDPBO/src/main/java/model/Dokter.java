@@ -12,8 +12,6 @@ public class Dokter extends User{
     private String idDokter;
     private String spesialisasi;
 
-    public Dokter() {
-    }
     public Dokter(String username,String password,String namaLengkap,String idDokter,String spesialisasi) {
         super(username, password, namaLengkap);
         this.idDokter = idDokter;
