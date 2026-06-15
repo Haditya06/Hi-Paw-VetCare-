@@ -4,6 +4,7 @@
  */
 package util;
 
+
 /**
  *
  * @author Dit
@@ -38,4 +39,6 @@ public class SessionManager {
     public boolean isLoggedIn(){
         return currentUser != null;
     }
+    
+   
 }

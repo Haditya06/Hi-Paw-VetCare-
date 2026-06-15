@@ -218,6 +218,7 @@ public class RegisterFrame extends javax.swing.JFrame {
      CustomerDAO customerDAO = new CustomerDAO();
      customerDAO.insertCustomer(c);
      
+     
      Hewan h = new Hewan(
             0,
             petName,
