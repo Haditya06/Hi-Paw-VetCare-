@@ -3,9 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import model.Customer;
+
+
+import javax.swing.JOptionPane;
 import model.Hewan;
+import model.User;
+import model.Customer;
 import database.CustomerDAO;
+import database.UserDAO;
 import database.HewanDAO;
 
 /**
@@ -190,49 +195,67 @@ public class RegisterFrame extends javax.swing.JFrame {
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
         
-    String nama = tfName.getText(); 
+    String nama = tfName.getText();
     String username = tfUsername.getText();
     String password = tfPassword.getText();
     String noHp = tfPhone.getText();
     String alamat = tfAddress.getText();
-    String petName = tfPetname.getText(); 
+
+    String petName = tfPetname.getText();
     String petType = tfPettype.getText();
     String petAge = tfPetage.getText();
+
     int umur;
-    
+
     try {
         umur = Integer.parseInt(petAge);
     } catch (Exception e) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Umur harus angka!");
+        JOptionPane.showMessageDialog(this, "Agerus angka!");
         return;
     }
-    
-    Customer c = new Customer(
-            noHp,
-            alamat,
-            username,
-            password,
-            nama
-    );
-    
-     CustomerDAO customerDAO = new CustomerDAO();
-     customerDAO.insertCustomer(c);
-     
-     
-     Hewan h = new Hewan(
-            0,
-            petName,
-            petType,
-            umur,
-            username
-    );
-     
-    HewanDAO hewanDAO = new HewanDAO();
-    hewanDAO.insertHewan(h);
-    
-    javax.swing.JOptionPane.showMessageDialog(this, "Register berhasil!");
 
-    this.dispose();
+    try {
+
+        // =========================
+        // 1. INSERT USER (via DAO)
+        // =========================
+        User user = new Customer(username, password, nama, "", "", 0);
+
+        UserDAO userDAO = new UserDAO();
+        int idUser = userDAO.insertAndReturnId(user);
+
+        if (idUser == -1) {
+            JOptionPane.showMessageDialog(this, "Gagal register user");
+            return;
+        }
+
+        // =========================
+        // 2. INSERT CUSTOMER (via DAO)
+        // =========================
+        Customer customer = new Customer( username, password, nama, noHp, alamat);
+
+        CustomerDAO customerDAO = new CustomerDAO();
+        int idCustomer = customerDAO.insert(customer, idUser);
+
+        if (idCustomer == -1) {
+            JOptionPane.showMessageDialog(this, "Gagal register customer");
+            return;
+        }
+
+        // =========================
+        // 3. INSERT HEWAN (via DAO)
+        // =========================
+        Hewan h = new Hewan(petName, petType, umur, idCustomer);
+
+        HewanDAO hewanDAO = new HewanDAO();
+        hewanDAO.insertHewan(h);
+
+        JOptionPane.showMessageDialog(this, "Register berhasil!");
+        this.dispose();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, e.getMessage());
+    }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

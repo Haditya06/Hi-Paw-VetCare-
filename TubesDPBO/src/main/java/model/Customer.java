@@ -14,17 +14,17 @@ public class Customer extends User {
     private String noHp;
     private String alamat;
 
-    public Customer(int idCustomer, String noHp, String alamat, String username, String password, String namaLengkap){
+    public Customer( String username, String password, String namaLengkap, String noHp, String alamat, int idCustomer){
 
-        super(username, password, namaLengkap, Role.CUSTOMER);
+        super(username, password, namaLengkap);
         this.idCustomer = idCustomer;
         this.noHp = noHp;
         this.alamat = alamat;
     }
+    
+    public Customer( String username, String password, String namaLengkap, String noHp, String alamat){
 
-    public Customer(String noHp, String alamat, String username, String password, String namaLengkap) {
-
-        super(username, password, namaLengkap, Role.CUSTOMER);
+        super(username, password, namaLengkap);
         this.noHp = noHp;
         this.alamat = alamat;
     }
@@ -51,5 +51,9 @@ public class Customer extends User {
 
     public void setAlamat(String alamat) {
         this.alamat = alamat;
+    }
+    
+    public String getRole() {
+        return "CUSTOMER";
     }
 }

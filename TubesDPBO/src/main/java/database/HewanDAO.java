@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package database;
+
 import java.sql.*;
 import java.util.ArrayList;
 import model.Hewan;
@@ -11,7 +12,6 @@ import model.Hewan;
  *
  * @author Ray Wishnu
  */
-
 public class HewanDAO {
 
     private Connection conn;
@@ -20,15 +20,14 @@ public class HewanDAO {
         conn = DatabaseConnection.getConnection();
     }
 
-    // =========================
-    // 1. INSERT HEWAN
-    // =========================
     public void insertHewan(Hewan h) {
+
         try {
-            String sql = "INSERT INTO Hewan (username, nama_hewan, jenis, umur) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO hewan (id_customer, nama_hewan, jenis, umur) VALUES (?, ?, ?, ?)";
+
             PreparedStatement ps = conn.prepareStatement(sql);
 
-            ps.setString(1, h.getUsername());
+            ps.setInt(1, h.getIdCustomer());
             ps.setString(2, h.getNamaHewan());
             ps.setString(3, h.getJenis());
             ps.setInt(4, h.getUmur());
@@ -40,9 +39,6 @@ public class HewanDAO {
         }
     }
 
-    // =========================
-    // 2. GET ALL HEWAN
-    // =========================
     public ArrayList<Hewan> getAllHewan() {
 
         ArrayList<Hewan> list = new ArrayList<>();
@@ -60,7 +56,7 @@ public class HewanDAO {
                         rs.getString("nama_hewan"),
                         rs.getString("jenis"),
                         rs.getInt("umur"),
-                        rs.getString("username")
+                        rs.getInt("id_customer")
                 );
 
                 list.add(h);
@@ -73,18 +69,15 @@ public class HewanDAO {
         return list;
     }
 
-    // =========================
-    // 3. GET HEWAN BY USERNAME
-    // =========================
-    public ArrayList<Hewan> getHewanByUsername(String username) {
+    public ArrayList<Hewan> getHewanByCustomer(int idCustomer) {
 
         ArrayList<Hewan> list = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM Hewan WHERE username=?";
+            String sql = "SELECT * FROM Hewan WHERE id_customer=?";
             PreparedStatement ps = conn.prepareStatement(sql);
 
-            ps.setString(1, username);
+            ps.setInt(1, idCustomer);
 
             ResultSet rs = ps.executeQuery();
 
@@ -95,7 +88,7 @@ public class HewanDAO {
                         rs.getString("nama_hewan"),
                         rs.getString("jenis"),
                         rs.getInt("umur"),
-                        rs.getString("username")
+                        rs.getInt("id_customer")
                 );
 
                 list.add(h);
@@ -108,9 +101,6 @@ public class HewanDAO {
         return list;
     }
 
-    // =========================
-    // 4. UPDATE HEWAN
-    // =========================
     public void updateHewan(Hewan h) {
 
         try {

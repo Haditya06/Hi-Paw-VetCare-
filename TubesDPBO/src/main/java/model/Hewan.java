@@ -13,23 +13,22 @@ public class Hewan {
     private String namaHewan;
     private String jenis;
     private int umur;
-    private String username;
+    private int idCustomer;
     
-    public Hewan(int idHewan,String namaHewan,String jenis,int umur, String username) {
+    public Hewan(int idHewan,String namaHewan,String jenis,int umur, int idCustomer) {
         this.idHewan = idHewan;
         this.namaHewan = namaHewan;
         this.jenis = jenis;
         this.umur = umur;
-        this.username = username;
+        this.idCustomer = idCustomer;
     }
     
-    public Hewan(String namaHewan,String jenis,int umur, String username) {
+    public Hewan(String namaHewan,String jenis,int umur, int idCustomer) {
         this.namaHewan = namaHewan;
         this.jenis = jenis;
         this.umur = umur;
-        this.username = username;
+        this.idCustomer = idCustomer;
     }
-    
     
     public int getIdHewan() {
         return idHewan;
@@ -53,8 +52,8 @@ public class Hewan {
         return umur;
     }
     
-    public String getUsername() {
-        return username;
+    public int getIdCustomer() {
+        return idCustomer;
     }
     
 }
