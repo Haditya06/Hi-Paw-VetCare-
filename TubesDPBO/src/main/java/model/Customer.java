@@ -8,27 +8,33 @@ package model;
  *
  * @author Dit
  */
-public class Customer extends User{
+public class Customer extends User {
+
+    private int idCustomer;
     private String noHp;
     private String alamat;
-    private int idCustomer;
-    
 
-    public Customer(String noHp, String alamat, int idCustomer, String username, String password, String namaLengkap) {
-        super(username, password, namaLengkap);
-        this.noHp = noHp;
-        this.alamat= alamat;
+    public Customer(int idCustomer, String noHp, String alamat, String username, String password, String namaLengkap){
+
+        super(username, password, namaLengkap, Role.CUSTOMER);
         this.idCustomer = idCustomer;
-    }
-    
-    public Customer(String noHp, String alamat,  String username, String password, String namaLengkap) {
-        super(username, password, namaLengkap);
         this.noHp = noHp;
-        this.alamat= alamat;
+        this.alamat = alamat;
     }
-    
-      public int getIdCustomer() {
+
+    public Customer(String noHp, String alamat, String username, String password, String namaLengkap) {
+
+        super(username, password, namaLengkap, Role.CUSTOMER);
+        this.noHp = noHp;
+        this.alamat = alamat;
+    }
+
+    public int getIdCustomer() {
         return idCustomer;
+    }
+
+    public void setIdCustomer(int idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
     public String getNoHp() {
@@ -46,10 +52,4 @@ public class Customer extends User{
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-    
-    @Override
-    public String getRole() {
-        return "Customer";
-    }
-    
 }
