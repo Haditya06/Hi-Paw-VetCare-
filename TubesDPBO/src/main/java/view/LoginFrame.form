@@ -69,10 +69,8 @@
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="tmblLogin" pref="125" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfUsernameLogin" max="32767" attributes="0"/>
-                                  <Component id="tfPasswordLogin" pref="125" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="tfUsernameLogin" max="32767" attributes="0"/>
+                              <Component id="tfPasswordLogin" pref="125" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">

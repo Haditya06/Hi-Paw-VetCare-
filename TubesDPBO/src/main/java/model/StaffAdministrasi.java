@@ -12,9 +12,9 @@ public class StaffAdministrasi extends User {
     private String idStaff;
     private String shiftKerja;
 
-    public StaffAdministrasi() {
-        super();
-    }
+//    public StaffAdministrasi() {
+//        super();
+//    }
 
     public StaffAdministrasi(String username,String password,String namaLengkap,String idStaff,String shiftKerja) {
         super(username, password, namaLengkap);

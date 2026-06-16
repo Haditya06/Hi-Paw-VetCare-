@@ -13,8 +13,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import util.SessionManager;
+import model.User;
+import model.Customer;
+import model.Dokter;
+
 public class LoginFrame extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginFrame.class.getName());
 
     /**
@@ -124,39 +129,36 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void tmblLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblLoginActionPerformed
         // TODO add your handling code here:
-    String username = tfUsernameLogin.getText().trim();
-    String password = tfPasswordLogin.getText().trim();
+        String username = tfUsernameLogin.getText().trim();
+        String password = tfPasswordLogin.getText().trim();
 
-    try {
+        try {
+            Connection conn = DatabaseConnection.getConnection();
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
 
-        Connection conn = DatabaseConnection.getConnection();
-
-        String sql ="SELECT * FROM users WHERE username = ? AND password = ?";
-
-        PreparedStatement ps = conn.prepareStatement(sql);
-
-        ps.setString(1, username);
-        ps.setString(2, password);
-
-        ResultSet rs = ps.executeQuery();
-        
-        if (rs.next()) {
-            String role = rs.getString("role");
-            JOptionPane.showMessageDialog(this,"Login Berhasil");
-            if (role.equals("STAFF")) {
-                new CustomerDashboardFrame().setVisible(true);
-            } else if (role.equals("DOKTER")) {
-                new DokterDashboardFrame().setVisible(true);
+            if (rs.next()) {
+                String role = rs.getString("role");
+                String namaLengkap = rs.getString("nama_lengkap");
+                if (role.equalsIgnoreCase("DOKTER")) {
+                    Dokter dokter = new Dokter(username, password, namaLengkap);
+                    SessionManager.getInstance().login(dokter);
+                    new DokterDashboardFrame().setVisible(true);
+                } else {
+                    Customer customer = new Customer(username, password, namaLengkap);
+                    SessionManager.getInstance().login(customer);
+                    new CustomerDashboardFrame().setVisible(true);
+                }
+                JOptionPane.showMessageDialog(this, "Login Berhasil");
+                this.dispose();
             } else {
-                new CustomerDashboardFrame().setVisible(true);
+                JOptionPane.showMessageDialog(this,"Username atau Password Salah");
             }
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog( this, "Username atau Password Salah");
-        }
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this,e.getMessage());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_tmblLoginActionPerformed
 

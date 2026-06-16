@@ -15,7 +15,6 @@ public class Customer extends User {
     private String alamat;
 
     public Customer( String username, String password, String namaLengkap, String noHp, String alamat, int idCustomer){
-
         super(username, password, namaLengkap);
         this.idCustomer = idCustomer;
         this.noHp = noHp;
@@ -27,6 +26,9 @@ public class Customer extends User {
         super(username, password, namaLengkap);
         this.noHp = noHp;
         this.alamat = alamat;
+    }
+    public Customer(String username,String password,String namaLengkap){
+        super(username,password,namaLengkap);
     }
 
     public int getIdCustomer() {
