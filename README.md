@@ -118,7 +118,7 @@ Main.java
 
 ## 👥 Tim Pengembang
 
-Proyek ini dikembangkan sebagai Tugas Besar Mata Kuliah Rekayasa Perangkat Lunak.
+Proyek ini dikembangkan sebagai Tugas Besar Mata Kuliah DASAR PEMROGRAMAN BERORIENTASI OBJEK.
 
 ## 📄 Lisensi
 
